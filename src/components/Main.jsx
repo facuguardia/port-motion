@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 
 function Main() {
   return (
-    <main className="container mx-auto pt-5 px-10">
+    <main className="container mx-auto pt-5 px-6">
       <motion.h3
         initial="hidden"
         whileInView="visible"
@@ -174,9 +174,15 @@ function Main() {
         </motion.button>
       </div>
       <motion.div
-        animate={{ x: 100 }}
-        transition={{ type: "spring", stiffness: 100 }}
-        className="flex items-center gap-6 px-3 w-32"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        className="flex gap-6 px-2 w-32"
       >
         <img
           src={imgOne}
@@ -189,7 +195,7 @@ function Main() {
           className="rounded-xl grayscale"
         />
       </motion.div>
-      <span className="absolute w-32 h-32 bg-pink-500/50 rounded-full bottom-0 -right-24 shadow-2xl"></span>
+      <span className="absolute w-32 h-32 bg-pink-500 rounded-full bottom-0 -right-24 shadow-black shadow-2xl"></span>
     </main>
   );
 }
