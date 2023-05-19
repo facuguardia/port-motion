@@ -6,8 +6,8 @@ import {
   SiLinkedin,
 } from "react-icons/si";
 
-import imgOne from "../../public/images/paisaje-1.jpg";
-import imgTwo from "../../public/images/paisaje-3.jpg";
+import imgOne from "/images/paisaje-1.jpg";
+import imgTwo from "/images/paisaje-3.jpg";
 
 import { motion } from "framer-motion";
 
@@ -143,7 +143,7 @@ function Main() {
           </motion.li>
         </ul>
       </div>
-      <div className="flex items-center gap-4 px-3 mb-4">
+      <div className="flex justify-center md:justify-start items-center gap-4 px-3 mb-4">
         <motion.button
           initial="hidden"
           whileInView="visible"
@@ -173,28 +173,34 @@ function Main() {
           Portfolio
         </motion.button>
       </div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        variants={{
-          hidden: { opacity: 0, x: 50 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        className="flex gap-6 px-2 w-32"
-      >
-        <img
+      <div className="flex justify-center md:justify-start items-center gap-6 mx-28 md:mx-2 w-32">
+        <motion.img
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
           src={imgOne}
           alt="paisaje londres"
           className="rounded-xl grayscale"
         />
-        <img
+        <motion.img
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0 },
+          }}
           src={imgTwo}
           alt="paisaje paris"
           className="rounded-xl grayscale"
         />
-      </motion.div>
+      </div>
       <span className="absolute w-32 h-32 bg-pink-500 rounded-full bottom-0 -right-24 shadow-black shadow-2xl"></span>
     </main>
   );

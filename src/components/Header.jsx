@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className="container mx-auto">
-      <ul className="p-5 flex items-center gap-8 border-b-2 ">
+      <ul className="p-5 flex flex-col md:flex-row items-center gap-14 md:gap-8 ">
         <li>
           <a
             href="#"

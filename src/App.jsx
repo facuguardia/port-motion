@@ -1,7 +1,6 @@
-import imgBG from "../public/images/mujer-app.jpg";
+import imgBG from "/images/mujer-app.jpg";
 import Main from "./components/Main";
 import Header from "./components/Header";
-import { motion } from "framer-motion";
 
 function App() {
   return (
